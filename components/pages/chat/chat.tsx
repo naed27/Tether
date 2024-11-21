@@ -11,7 +11,7 @@ export default function Chat() {
 
   const handleSendMessage = (message: string) => {
     if (message.trim()) {
-      setMessages((prevMessages) => [...prevMessages, { username, text: message }])
+      setMessages((prevMessages) => [...prevMessages, { username: username || 'Anonymous', text: message }])
     }
   }
 
