@@ -69,8 +69,11 @@ export default function Chat() {
 
   return (
     <div className="min-h-screen flex items-center justify-center w-full">
-      <div className="max-w-[700px] w-full h-[90vh] flex flex-col p-6 ring-1 ring-gray-200">
-        <h2 className="text-2xl font-semibold text-center mb-4 text-gray-800">Tether</h2>
+      <div className="max-w-[700px] w-full h-[95vh] flex flex-col p-2 ring-1 ring-gray-200">
+        <h2 className="text-2xl font-semibold text-center text-gray-800">
+          Tether
+        </h2> 
+        <span className='text-center mb-4' style={{fontSize: '10px'}}>by Dean Kudou</span>
         <ChatUserSettings setUsername={setUsername} />
         <ChatMessageList messages={messages} className="flex-grow" currentSessionId={sessionId} />
         <ChatMessageInput onSendMessage={handleSendMessage} />
