@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from "react"
-import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { toast, ToastContainer } from 'react-toastify'
 
 interface ChatUserSettingsProps {
   setUsername: (username: string) => void
@@ -14,9 +14,9 @@ export default function ChatUserSettings({ setUsername }: ChatUserSettingsProps)
   const handleUsernameChange = () => {
     if (tempUsername.trim()) {
       setUsername(tempUsername)
-      toast.success("Username saved successfully!") // Show success toast
+      toast.success("Username saved successfully!") 
     } else {
-      toast.error("Please enter a valid username") // Show error toast
+      toast.error("Please enter a valid username")
     }
   }
 
@@ -31,7 +31,8 @@ export default function ChatUserSettings({ setUsername }: ChatUserSettingsProps)
           onChange={(e) => setTempUsername(e.target.value)}
           className="p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 w-full"
           placeholder="Enter username"
-          autoComplete="off"  // Disable suggestions
+          autoComplete="off"  
+          maxLength={24} 
         />
         <button
           onClick={handleUsernameChange}
