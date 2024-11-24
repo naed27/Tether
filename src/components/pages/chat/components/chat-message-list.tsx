@@ -1,6 +1,7 @@
 'use client'
 
-import { useLayoutEffect, useRef } from "react"
+import { cn } from "@/lib/utils";
+import { useLayoutEffect, useMemo, useRef } from "react"
 
 interface ChatMessageListProps {
   messages: { id: string; username: string; text: string; createdAt: string; sessionId:string }[] // Add sessionId to each message
@@ -21,21 +22,24 @@ export default function ChatMessageList({
 
   return (
     <div className={`messages space-y-4 overflow-y-auto mb-4 pr-2 ${className}`}>
-      {messages.map((msg, index) => (
-        <div
-          key={index}
-          className={`flex flex-col space-y-1 items-${msg.sessionId === currentSessionId ? 'end' : 'start'}`}
-        >
+      {messages.map((msg, index) => {
+        return (
           <div
-            className={`p-3 max-w-max inline-block rounded-lg 
-            bg-white text-gray-800
-            shadow-md`}
+          key={index}
+          style={{alignItems: msg.sessionId === currentSessionId ? 'end' : 'start'}}
+          className={cn(`flex flex-col space-y-1`)}
           >
-            <span className="font-semibold text-blue-600">{msg.username}: </span>
-            <span className="break-words break-all">{msg.text}</span>
+            <div
+              className={`p-3 max-w-max inline-block rounded-lg 
+              bg-white text-gray-800
+              shadow-md`}
+            >
+              <span className="font-semibold text-blue-600">{msg.username}: </span>
+              <span className="break-words break-all">{msg.text}</span>
+            </div>
           </div>
-        </div>
-      ))}
+        )
+      })}
       <div ref={messageEndRef} />
     </div>
   )
