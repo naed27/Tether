@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tether2-dev-e3654-authRole",
+      "UnauthRoleArn": "arn:aws:iam::217571623710:role/amplify-tether2-dev-e3654-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::217571623710:role/amplify-tether2-dev-e3654-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-tether2-dev-e3654-deployment",
+      "UnauthRoleName": "amplify-tether2-dev-e3654-unauthRole",
+      "StackName": "amplify-tether2-dev-e3654",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:217571623710:stack/amplify-tether2-dev-e3654/a7e14f70-aa3e-11ef-aaf3-0a12bf525e91",
+      "AmplifyAppId": "d2rn0pcfhcagae"
+    }
+  }
+}

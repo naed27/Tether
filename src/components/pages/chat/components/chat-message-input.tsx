@@ -22,7 +22,7 @@ export default function ChatMessageInput({ onSendMessage }: ChatMessageInputProp
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         placeholder="Type a message"
-        className="flex-1 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="flex-1 text-black p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       <button
         type="submit"

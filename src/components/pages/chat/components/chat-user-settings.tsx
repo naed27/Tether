@@ -22,15 +22,16 @@ export default function ChatUserSettings({ setUsername }: ChatUserSettingsProps)
 
   return (
     <div className="mb-4 text-center flex flex-col items-center justify-center space-y-4">
-      <div className="flex items-center space-x-2 text-gray-700">
+      <div className="flex items-center space-x-2 w-full">
         <label htmlFor="username" className="font-medium">Username</label>
         <input
           id="username"
           type="text"
           value={tempUsername}
           onChange={(e) => setTempUsername(e.target.value)}
-          className="p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+          className="p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 w-full"
           placeholder="Enter username"
+          autoComplete="off"  // Disable suggestions
         />
         <button
           onClick={handleUsernameChange}
