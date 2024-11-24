@@ -47,7 +47,6 @@ export default function Chat() {
 
       try {
         await client.graphql(graphqlOperation(sendMessage, newMessage))
-        toast.success("Message sent successfully!")
       } catch (err) {
         toast.error("Error sending message")
         console.error('Error sending message:', err)
