@@ -25,10 +25,11 @@ Amplify.configure({
 
 const client = generateClient()
 
+const sessionId = uuidv4()
+
 export default function Chat() {
-  const [messages, setMessages] = useState<{ id: string; username: string; text: string; createdAt: string; sessionId:string }[]>([]);
-  const [username, setUsername] = useState<string>("");
-  const [sessionId, setSessionId] = useState<string>(uuidv4())
+  const [messages, setMessages] = useState<{ id: string; username: string; text: string; createdAt: string; sessionId:string }[]>([])
+  const [username, setUsername] = useState<string>("")
 
   useEffect(() => {
     if (!localStorage.getItem("sessionId")) {
