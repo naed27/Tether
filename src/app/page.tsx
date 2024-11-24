@@ -4,10 +4,10 @@ const icon = 'https://cdn.discordapp.com/attachments/1112753458165063701/1143802
 
 export const metadata = {
   title: 'Tether',
-  description: 'Welcome to the Tether where you can send and receive messages.',
+  description: 'Instant, effortless, and real-time conversations.',
   openGraph: {
     title: 'Tether', 
-    description: 'Join our Tether and start messaging.',
+    description: 'Instant, effortless, and real-time conversations.',
     images: [
       {
         url: icon,
@@ -20,7 +20,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Tether',
-    description: 'Join our Tether and send messages.',
+    description: 'Instant, effortless, and real-time conversations.',
     images: [icon],
   },
   icons: {
