@@ -31,12 +31,6 @@ export default function Chat() {
   const [messages, setMessages] = useState<{ id: string; username: string; text: string; createdAt: string; sessionId:string }[]>([])
   const [username, setUsername] = useState<string>("")
 
-  useEffect(() => {
-    if (!localStorage.getItem("sessionId")) {
-      localStorage.setItem("sessionId", sessionId)
-    }
-  }, [sessionId]);
-
   const handleSendMessage = async (message: string) => {
     if (message.trim()) {
       const newMessage = {

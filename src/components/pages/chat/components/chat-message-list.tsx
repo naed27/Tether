@@ -5,7 +5,7 @@ import { useLayoutEffect, useRef } from "react"
 interface ChatMessageListProps {
   messages: { id: string; username: string; text: string; createdAt: string; sessionId:string }[] // Add sessionId to each message
   className?: string
-  currentSessionId: string // Pass currentSessionId to compare
+  currentSessionId: string 
 }
 
 export default function ChatMessageList({
@@ -24,7 +24,7 @@ export default function ChatMessageList({
       {messages.map((msg, index) => (
         <div
           key={index}
-          className={`flex flex-col space-y-1 items-${msg.sessionId === currentSessionId ? 'end' : 'start'}`} // Compare sessionId instead of username
+          className={`flex flex-col space-y-1 items-${msg.sessionId === currentSessionId ? 'end' : 'start'}`}
         >
           <div
             className={`p-3 max-w-max inline-block rounded-lg 
