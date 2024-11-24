@@ -25,16 +25,20 @@ export default function ChatMessageList({
       {messages.map((msg, index) => {
         return (
           <div
-          key={index}
-          style={{alignItems: msg.sessionId === currentSessionId ? 'end' : 'start'}}
-          className={cn(`flex flex-col space-y-1`)}
+            key={index}
+            className={cn(`flex flex-col space-y-1`)}
+            style={{ alignItems: msg.sessionId === currentSessionId ? 'flex-end' : 'flex-start' }}
           >
+            {msg.sessionId !== currentSessionId && (
+              <span className="text-gray-600 text-xs font-medium ml-1">{msg.username}</span>
+            )}
             <div
-              className={`p-3 max-w-max inline-block rounded-lg 
-              bg-white text-gray-800
-              shadow-md`}
+              style={{
+                background: msg.sessionId === currentSessionId ? '#0089FF' : 'white',
+                color: msg.sessionId === currentSessionId ? 'white' : 'black'
+              }}
+              className={`p-3 max-w-max inline-block rounded-lg shadow-md`}
             >
-              <span className="font-semibold text-blue-600">{msg.username}: </span>
               <span className="break-words break-all">{msg.text}</span>
             </div>
           </div>
