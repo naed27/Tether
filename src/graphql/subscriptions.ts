@@ -8,12 +8,13 @@ type GeneratedSubscription<InputType, OutputType> = string & {
   __generatedSubscriptionOutput: OutputType;
 };
 
-export const onMessageSent = /* GraphQL */ `subscription OnMessageSent {
-  onMessageSent {
+export const onMessageSent = /* GraphQL */ `subscription OnMessageSent($roomId: ID!) {
+  onMessageSent(roomId: $roomId) {
     id
-    sessionId
+    roomId
     username
     text
+    sessionId
     createdAt
     __typename
   }

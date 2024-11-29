@@ -1,20 +1,19 @@
 'use client'
 
 import { cn } from "@/lib/utils";
-import { useLayoutEffect, useRef } from "react"
+import { ChatContext } from "../chat";
+import { sessionId } from "@/utils/session";
+import { useContext, useLayoutEffect, useRef } from "react"
 
 interface ChatMessageListProps {
-  messages: { id: string; username: string; text: string; createdAt: string; sessionId:string }[] // Add sessionId to each message
   className?: string
-  currentSessionId: string 
 }
 
-export default function ChatMessageList({
-  messages,
-  className,
-  currentSessionId
-}: ChatMessageListProps) {
+export default function ChatMessageList({ className }: ChatMessageListProps) {
+
   const messageEndRef = useRef<HTMLDivElement | null>(null)
+
+  const { messages } = useContext(ChatContext)
 
   useLayoutEffect(() => {
     messageEndRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -27,13 +26,13 @@ export default function ChatMessageList({
           <div
             key={index}
             className={cn(`flex flex-col space-y-1`)}
-            style={{ alignItems: msg.sessionId === currentSessionId ? 'flex-end' : 'flex-start' }}
+            style={{ alignItems: msg.sessionId === sessionId ? 'flex-end' : 'flex-start' }}
           >
-            <span className="text-gray-600 text-xs font-medium ml-1">{`${msg.username}${msg.sessionId === currentSessionId ? ' (You)':''}`}</span>
+            <span className="text-gray-600 text-xs font-medium ml-1">{`${msg.username}${msg.sessionId === sessionId ? ' (You)':''}`}</span>
             <div
               style={{
-                background: msg.sessionId === currentSessionId ? '#0089FF' : 'white',
-                color: msg.sessionId === currentSessionId ? 'white' : 'black'
+                background: msg.sessionId === sessionId ? '#0089FF' : 'white',
+                color: msg.sessionId === sessionId ? 'white' : 'black'
               }}
               className={`p-3 max-w-max inline-block rounded-lg shadow-md`}
             >

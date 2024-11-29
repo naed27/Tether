@@ -8,12 +8,13 @@ type GeneratedQuery<InputType, OutputType> = string & {
   __generatedQueryOutput: OutputType;
 };
 
-export const getMessages = /* GraphQL */ `query GetMessages {
-  getMessages {
+export const getMessages = /* GraphQL */ `query GetMessages($roomId: ID!) {
+  getMessages(roomId: $roomId) {
     id
-    sessionId
+    roomId
     username
     text
+    sessionId
     createdAt
     __typename
   }
