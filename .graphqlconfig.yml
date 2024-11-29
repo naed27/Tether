@@ -1,6 +1,6 @@
 projects:
-  ChatAppAPI:
-    schemaPath: src/graphql/schema.json
+  TetherAPI:
+    schemaPath: ../tether/src/graphql/schema.json
     includes:
       - src/graphql/**/*.ts
     excludes:
@@ -12,7 +12,7 @@ projects:
         generatedFileName: src/API.ts
         docsFilePath: src/graphql
         region: ap-northeast-1
-        apiId: r7dxjdufjnhtrbwhdaqq6aof2a
+        apiId: mly2fcbufbbyrka6itbq5la6ei
         maxDepth: 2
 extensions:
   amplify:

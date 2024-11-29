@@ -8,12 +8,23 @@ type GeneratedMutation<InputType, OutputType> = string & {
   __generatedMutationOutput: OutputType;
 };
 
-export const sendMessage = /* GraphQL */ `mutation SendMessage($sessionId: String!, $username: String!, $text: String!) {
-  sendMessage(sessionId: $sessionId, username: $username, text: $text) {
+export const sendMessage = /* GraphQL */ `mutation SendMessage(
+  $roomId: ID!
+  $username: String!
+  $text: String!
+  $sessionId: ID!
+) {
+  sendMessage(
+    roomId: $roomId
+    username: $username
+    text: $text
+    sessionId: $sessionId
+  ) {
     id
-    sessionId
+    roomId
     username
     text
+    sessionId
     createdAt
     __typename
   }

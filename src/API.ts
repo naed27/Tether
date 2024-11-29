@@ -5,53 +5,60 @@
 export type Message = {
   __typename: "Message",
   id: string,
-  sessionId: string,
+  roomId: string,
   username: string,
   text: string,
+  sessionId: string,
   createdAt: string,
 };
 
 export type SendMessageMutationVariables = {
-  sessionId: string,
+  roomId: string,
   username: string,
   text: string,
+  sessionId: string,
 };
 
 export type SendMessageMutation = {
   sendMessage?:  {
     __typename: "Message",
     id: string,
-    sessionId: string,
+    roomId: string,
     username: string,
     text: string,
+    sessionId: string,
     createdAt: string,
   } | null,
 };
 
 export type GetMessagesQueryVariables = {
+  roomId: string,
 };
 
 export type GetMessagesQuery = {
   getMessages?:  Array< {
     __typename: "Message",
     id: string,
-    sessionId: string,
+    roomId: string,
     username: string,
     text: string,
+    sessionId: string,
     createdAt: string,
   } | null > | null,
 };
 
 export type OnMessageSentSubscriptionVariables = {
+  roomId: string,
 };
 
 export type OnMessageSentSubscription = {
   onMessageSent?:  {
     __typename: "Message",
     id: string,
-    sessionId: string,
+    roomId: string,
     username: string,
     text: string,
+    sessionId: string,
     createdAt: string,
   } | null,
 };

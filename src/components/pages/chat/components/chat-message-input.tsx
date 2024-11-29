@@ -1,17 +1,16 @@
 'use client'
 
-import { useState } from "react"
+import { ChatContext } from "../chat"
+import { useContext, useState } from "react"
 
-interface ChatMessageInputProps {
-  onSendMessage: (message: string) => void
-}
-
-export default function ChatMessageInput({ onSendMessage }: ChatMessageInputProps) {
+export default function ChatMessageInput() {
   const [message, setMessage] = useState<string>("")
+
+  const { roomId, handleSendMessage } = useContext(ChatContext)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    onSendMessage(message)
+    handleSendMessage(roomId, message)
     setMessage("")
   }
 
