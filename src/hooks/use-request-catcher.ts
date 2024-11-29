@@ -2,8 +2,8 @@ import { useCallback } from "react";
 import { toast } from "react-toastify";
 
 interface RequestCatcherParams {
-  requestFunction: (payload?: any) => any;
-  payload?: any;
+  requestFunction: (payload?: any) => any; // eslint-disable-line @typescript-eslint/no-explicit-any
+  payload?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
   successMessage?: string;
   errorMessage?: string;
 }
